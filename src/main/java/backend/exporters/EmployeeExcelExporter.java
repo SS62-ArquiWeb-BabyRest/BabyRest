@@ -6,7 +6,8 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
 
-import backend.entities.Employee;
+import backend.entities.Ninero_Universitario;
+import backend.entities.Ninero_Universitario;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
@@ -20,10 +21,10 @@ public class EmployeeExcelExporter {
 
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
-    private List<Employee> employees;
+    private List<Ninero_Universitario> employees;
 
 
-    public EmployeeExcelExporter (List<Employee> employees) {
+    public EmployeeExcelExporter (List<Ninero_Universitario> employees) {
         this.employees = employees;
         workbook = new XSSFWorkbook();
     }
@@ -73,7 +74,7 @@ public class EmployeeExcelExporter {
         font.setFontHeight(14);
         style.setFont(font);
 
-        for( Employee result: employees) {
+        for( Ninero_Universitario result: employees) {
 
             Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
