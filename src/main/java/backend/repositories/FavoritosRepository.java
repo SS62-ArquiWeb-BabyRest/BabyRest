@@ -2,8 +2,8 @@ package backend.repositories;
 
 import backend.entities.Favoritos;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-
-public interface FavoritosRepository extends JpaRepository<Project, Long> {
-    List<Favoritos> findByPadreEmpleadorId(int padreEmpleadorId);
+@Repository
+public interface FavoritosRepository extends JpaRepository<Favoritos, Long> {
 }
