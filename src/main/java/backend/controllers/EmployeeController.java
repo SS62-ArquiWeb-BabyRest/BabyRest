@@ -1,8 +1,10 @@
 package backend.controllers;
 import backend.entities.Employee;
+import backend.entities.Ninero_Universitario;
 import backend.exporters.EmployeeExcelExporter;
 import backend.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.NamedInheritableThreadLocal;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -90,10 +92,10 @@ public class EmployeeController {
         String headerValue = "attachment; filename=result_product";
         response.setHeader(headerKey, headerValue);
 
-        List<Employee> employees = employeeService.listAll();
+        List<Ninero_Universitario> employees = employeeService.listAll();
 
         EmployeeExcelExporter excelExporter = new EmployeeExcelExporter(
-                employees);
+                niner);
         excelExporter.export(response);
     }
 

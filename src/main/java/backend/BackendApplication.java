@@ -66,7 +66,7 @@ public class BackendApplication {
 			);
 
 
-			Employee employeeSaved = employeeRepository.save(new Employee(Long.valueOf(0),"Cinthy","Lima",15000.0,null));
+			Ninero_Universitario employeeSaved = employeeRepository.save(new Ninero_Universitario(Long.valueOf(0),"Cinthy","Lima",15000.0,null));
 			employeeRepository.save(new Employee(Long.valueOf(0),"Gonzalo","Lima",15000.0,null));
 			employeeRepository.save(new Employee(Long.valueOf(0),"Gladys","Cuzco",5000.0,null));
 			employeeRepository.save(new Employee(Long.valueOf(0),"Walter","Lima",9000.0,null));
