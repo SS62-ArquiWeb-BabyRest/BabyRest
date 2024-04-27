@@ -4,8 +4,6 @@ package backend;
 import backend.entities.*;
 import backend.repositories.*;
 import backend.services.EmployeeProjectService;
-import jesus.vargas.pc1.entities.*;
-import jesus.vargas.pc1.repositories.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
