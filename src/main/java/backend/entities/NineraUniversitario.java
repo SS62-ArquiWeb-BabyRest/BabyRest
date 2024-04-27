@@ -40,5 +40,5 @@ public class NineraUniversitario{
     @JsonIgnore
     @JoinColumn(name = "Usuario_id")
     private User usuario_ninera;
-    
+
 }
