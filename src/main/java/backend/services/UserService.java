@@ -1,13 +1,13 @@
 package backend.services;
 
 import backend.dtos.DTOUser;
-import backend.entities.User;
+import backend.entities.Usuario;
 
 public interface UserService {
 
-    public User findById(Long id);
+    public Usuario findById(Long id);
 
-    public User register(DTOUser user);
+    public Usuario register(DTOUser user);
 
-    public User changePassword(DTOUser user);
+    public Usuario changePassword(DTOUser user);
 }

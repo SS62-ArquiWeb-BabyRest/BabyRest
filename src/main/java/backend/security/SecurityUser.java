@@ -1,6 +1,6 @@
 package backend.security;
 
-import backend.entities.User;
+import backend.entities.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,7 +12,7 @@ import java.util.Collection;
 @AllArgsConstructor
 public class SecurityUser implements UserDetails {
 
-    private User user;
+    private Usuario user;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

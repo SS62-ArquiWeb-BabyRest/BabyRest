@@ -2,7 +2,7 @@ package backend.servicesimpl;
 
 import backend.dtos.DTOUser;
 import backend.entities.AuthorityName;
-import backend.entities.User;
+import backend.entities.Usuario;
 import backend.exceptions.IncompleteDataException;
 import backend.exceptions.KeyRepeatedDataException;
 import backend.exceptions.ResourceNotFoundException;
@@ -25,8 +25,8 @@ public class UserServiceImpl implements UserService {
     AuthorityRepository authorityRepository;
 
     @Override
-    public User findById(Long id) {
-        User userFound = userRepository.findById(id).orElse(null);
+    public Usuario findById(Long id) {
+        Usuario userFound = userRepository.findById(id).orElse(null);
         if (userFound == null) {
             throw new ResourceNotFoundException("There are no User with the id: "+String.valueOf(id));
         }
@@ -34,16 +34,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User register(DTOUser user) {
+    public Usuario register(DTOUser user) {
 
         if (user.getUserName().length()>4 && user.getPassword().length()>4) {
 
-            User userFound = userRepository.findByUserName(user.getUserName());
+            Usuario userFound = userRepository.findByUserName(user.getUserName());
             if (userFound != null) {
                 throw new KeyRepeatedDataException("User name can not be duplicated");
             };
 
-            User newUser = new User();
+            Usuario newUser = new Usuario();
             newUser.setUserName(user.getUserName());
             newUser.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
             newUser.setEnabled(true);
@@ -65,10 +65,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User changePassword(DTOUser user) {
+    public Usuario changePassword(DTOUser user) {
         if (user.getUserName().length()>4 && user.getPassword().length()>4) {
 
-            User userFound = userRepository.findByUserName(user.getUserName());
+            Usuario userFound = userRepository.findByUserName(user.getUserName());
             if (userFound == null) {
                 throw new ResourceNotFoundException("User name can not be found");
             };

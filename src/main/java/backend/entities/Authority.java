@@ -30,7 +30,7 @@ public class Authority {
 
     @JsonIgnore
     @ManyToMany(mappedBy = "authorities")
-    private List<User> users;
+    private List<Usuario> users;
 
 
     public Authority(AuthorityName name) {

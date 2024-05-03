@@ -1,10 +1,10 @@
 package backend.repositories;
 
-import backend.entities.User;
+import backend.entities.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<Usuario, Long> {
 
-    public User findByUserName(String userName);
+    public Usuario findByUserName(String userName);
 
 }

@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Usuario {
 
 
     @Id
@@ -48,7 +48,7 @@ public class User {
     private List<Authority> authorities;
 
 
-    public User(String userName, String password, boolean enabled, Date passwordLastUpdate, List<Authority> authorities) {
+    public Usuario(String userName, String password, boolean enabled, Date passwordLastUpdate, List<Authority> authorities) {
         this.userName = userName;
         this.password = password;
         this.enabled = enabled;

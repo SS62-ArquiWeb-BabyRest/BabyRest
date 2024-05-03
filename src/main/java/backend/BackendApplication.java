@@ -4,8 +4,6 @@ package backend;
 import backend.entities.*;
 import backend.repositories.*;
 import backend.services.EmployeeProjectService;
-import jesus.vargas.pc1.entities.*;
-import jesus.vargas.pc1.repositories.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -49,7 +47,7 @@ public class BackendApplication {
 
 
 			userRepository.save(
-					new User("gmorip", new BCryptPasswordEncoder().encode("UPC2023!"),true,new Date(),
+					new Usuario("gmorip", new BCryptPasswordEncoder().encode("UPC2023!"),true,new Date(),
 							List.of(
 									authorityRepository.findByName(AuthorityName.ROLE_PRINCIPAL),
 									authorityRepository.findByName(AuthorityName.ROLE_ADMIN),
@@ -59,7 +57,7 @@ public class BackendApplication {
 			);
 
 			userRepository.save(
-					new User("crevilla", new BCryptPasswordEncoder().encode("DISEÑOPERU18!"),true,new Date(),
+					new Usuario("crevilla", new BCryptPasswordEncoder().encode("DISEÑOPERU18!"),true,new Date(),
 							List.of(
 									authorityRepository.findByName(AuthorityName.ROLE_STUDENT),
 									authorityRepository.findByName(AuthorityName.READ)

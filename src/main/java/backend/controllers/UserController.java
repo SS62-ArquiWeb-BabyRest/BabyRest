@@ -2,7 +2,7 @@ package backend.controllers;
 
 import backend.dtos.DTOToken;
 import backend.dtos.DTOUser;
-import backend.entities.User;
+import backend.entities.Usuario;
 import backend.security.JwtUtilService;
 import backend.security.SecurityUser;
 import backend.services.UserService;
@@ -34,23 +34,23 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/users/register")
-    public ResponseEntity<User> createUser(@RequestBody DTOUser user) {
-        User newUser = userService.register(user);
-        return new ResponseEntity<User>(newUser, HttpStatus.CREATED);
+    public ResponseEntity<Usuario> createUser(@RequestBody DTOUser user) {
+        Usuario newUser = userService.register(user);
+        return new ResponseEntity<Usuario>(newUser, HttpStatus.CREATED);
     }
 
 
     @PutMapping("/users")
-    public ResponseEntity<User> updateUser(@RequestBody DTOUser user) {
-        User newUser = userService.changePassword(user);
-        return new ResponseEntity<User>(newUser, HttpStatus.OK);
+    public ResponseEntity<Usuario> updateUser(@RequestBody DTOUser user) {
+        Usuario newUser = userService.changePassword(user);
+        return new ResponseEntity<Usuario>(newUser, HttpStatus.OK);
     }
 
 
     @GetMapping("/users/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {
-        User user = userService.findById(id);
-        return new ResponseEntity<User>(user, HttpStatus.OK);
+    public ResponseEntity<Usuario> getUserById(@PathVariable("id") Long id) {
+        Usuario user = userService.findById(id);
+        return new ResponseEntity<Usuario>(user, HttpStatus.OK);
     }
 
 
